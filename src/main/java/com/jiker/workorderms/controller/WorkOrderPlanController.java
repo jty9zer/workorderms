@@ -58,9 +58,9 @@ public class WorkOrderPlanController {
         result = workOrderPlanService.updateWorkOrderPlan(workOrderPlan);
         //根据返回结果值,完成工单计划成功或失败逻辑处理
         if (result == 0) {
-            return resDate + ": 创建工单计划失败";
+            return resDate + ": 修改工单计划失败";
         } else {
-            return resDate + ": 创建工单成功";
+            return resDate + ": 修改工单计划成功";
         }
     }
 
@@ -74,9 +74,9 @@ public class WorkOrderPlanController {
         result = workOrderPlanService.deleteWorkOrderPlan(workOrderPlan);
         //根据返回结果值,完成工单计划成功或失败逻辑处理
         if (result == 0) {
-            return resDate + ": 创建工单计划失败";
+            return resDate + ": 删除工单计划失败";
         } else {
-            return resDate + ": 创建工单成功";
+            return resDate + ": 删除工单计划成功";
         }
     }
 }

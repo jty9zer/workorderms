@@ -16,7 +16,7 @@ public interface WorkOrderPlanDao {
     @Select("select max(number) from workorderms.workorder_plan")
     String findMaxNumber();
 
-    @Update("update workorderms.workorder_plan set content=#{content},plan_start_time=#{plan_start_time}, plan_end_time=#{plan_end_time} where id = #{id} ")
+    @Update("update workorderms.workorder_plan set content=#{content},plan_start_time=#{plan_start_time}, plan_end_time=#{plan_end_time} where number = #{number} ")
     int update(WorkOrderPlan workOrderPlan);
 
     @Delete("delete from workorderms.workorder_plan where number = #{number}")

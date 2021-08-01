@@ -1,13 +1,11 @@
 package com.jiker.workorderms.controller;
 
-import com.jiker.workorderms.bean.WorkOrderPlan;
 import com.jiker.workorderms.service.WorkOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
-import javax.annotation.PostConstruct;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,7 +20,7 @@ public class WorkOrderPlanSchedulerController {
     String date = sdf.format(new Date());
 
     //2.每天凌晨0点启动工单计划调度器
-//    @Scheduled(cron = "0 0 0 * * ?")
+    @Scheduled(cron = "0 0 0 * * ?")
 //   @PostConstruct
     private void workOrderScheduler() throws ParseException {
         System.out.println(date + ":工单计划调度器启动");

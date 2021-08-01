@@ -40,14 +40,9 @@ public class Utils {
         String time = sdf.format(date);
 
         //获取6位序列号
-        String number;
-        try {
-            number = workOrderPlanDao.findMaxNumber();
-        } catch (NullPointerException e) {
-            number = "";
-        }
+        String number = workOrderPlanDao.findMaxNumber();
 
-        if (number.equals("")) {
+        if (number == null) {
             number = "000001";
         } else {
             number = number.substring(10);
